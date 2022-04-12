@@ -25,7 +25,7 @@
   <div class="footer">
       <div class="foot">
         ALL CONTENT COPYRIGHT 2022 RAQKAAQ STORE
-        <a href="https://github.com/"><img src="/images/github.png"></a>
+        <a href="https://github.com/raqkaaq/store.raqkaaq.com.git"><img src="/images/github.png"></a>
       </div>
     </div>
 </div>
@@ -94,6 +94,7 @@ body {
   padding-left: 550px;
 }
 .foot img {
-  width: 30px;
-  h
+  width: 35px;
+  height: 35px;
+}
 </style>
