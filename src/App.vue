@@ -1,35 +1,51 @@
 <template>
-<div id="app">
-  <div id="menu">
-    <div id="brand">
-      <router-link to="/">
-        <img src="/images/logo.png">
-      </router-link>
-    </div>
-    <div id="side">
-      <router-link to="/browse">
-        <div class="menu-item browse">
-          <img src="/images/globe.png">
-          <p>Browse</p>
-        </div>
-      </router-link>
-      <router-link to="/cart">
-        <div class="menu-item">
-          <img src="/images/love.png">
-          <p> {{numItems}} items</p>
-        </div>
-      </router-link>
-    </div>
-  </div>
-  <router-view />
-  <div class="footer">
-      <div class="foot">
-        ALL CONTENT COPYRIGHT 2022 RAQKAAQ STORE
-        <a href="https://github.com/raqkaaq/store.raqkaaq.com.git"><img src="/images/github.png"></a>
+  <div id="app">
+    <div id="menu">
+      <div id="brand">
+        <router-link to="/">
+          <img src="/images/logo.png" />
+        </router-link>
+      </div>
+      <div id="side">
+        <router-link to="/browse">
+          <div class="menu-item browse">
+            <img src="/images/globe.png" />
+            <p>Browse</p>
+          </div>
+        </router-link>
+        <router-link to="/cart">
+          <div class="menu-item">
+            <img src="/images/love.png" />
+            <p>{{ numberOfItemsInCart }} items</p>
+          </div>
+        </router-link>
       </div>
     </div>
-</div>
+    <router-view />
+    <div class="footer">
+      <div class="foot">
+        ALL CONTENT COPYRIGHT 2022 RAQKAAQ STORE
+        <a href="https://github.com/raqkaaq/store.raqkaaq.com.git"
+          ><img src="/images/github.png"
+        /></a>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  name: "App",
+  data() {
+    return {};
+  },
+  computed: {
+    numberOfItemsInCart() {
+      return this.$root.$data.cart.length;
+    },
+  },
+};
+</script>
 
 <style>
 * {
@@ -38,7 +54,6 @@
 
 body {
   margin: 50px 100px;
-
 }
 
 #menu {
@@ -50,7 +65,7 @@ body {
 }
 
 #menu a {
-  color: #B84901;
+  color: #b84901;
 }
 
 #brand {
